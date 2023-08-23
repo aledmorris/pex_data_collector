@@ -48,3 +48,8 @@ Please be aware of the following.
     - API requests to the Management Node use HTTPS, but TLS is unverified.
     - As the password is passed to the container, it can be viewed in plaintext when connecting to the container shell.
     - Storing your password in the ```.env``` file (i.e. in plain text) is probably not a good idea.
+
+## References
+
+- Pexip Infinity Management History API: https://docs.pexip.com/api_manage/api_history.htm
+- Extracting and analyzing call data: https://docs.pexip.com/api_manage/extract_analyse.htm
