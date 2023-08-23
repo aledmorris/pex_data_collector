@@ -40,10 +40,6 @@ Once the image is built, you can run the container using one of the following ex
 #### Variables in .env file
 - ```docker run --env-file .env -v ./data:/app/data aledmorris/pex_data_collector:latest```
 
-### Logging
-The script writes to the log file to indicate what is happening
- once triggered. The log filename is ```data_collector.log``` and is written to the data folder along with the retrieved CSV data.
-
 ## Disclaimer
 Please be aware of the following.
 
