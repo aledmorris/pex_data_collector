@@ -10,10 +10,22 @@
 
 # add env variables to the crontab file
 printf "DEFAULT_MGR_ADDRESS=$DEFAULT_MGR_ADDRESS\n" >> /etc/cron.d/crontab
-printf "DEFAULT_MGR_USERNAME=$DEFAULT_MGR_USERNAME\n" >> /etc/cron.d/crontab
 printf "DEFAULT_MGR_SECRET=$DEFAULT_MGR_SECRET\n" >> /etc/cron.d/crontab
-printf "DEFAULT_CONF_LIMIT=$DEFAULT_CONF_LIMIT\n" >> /etc/cron.d/crontab
-printf "DEFAULT_PART_LIMIT=$DEFAULT_PART_LIMIT\n" >> /etc/cron.d/crontab
+
+if [ $DEFAULT_MGR_USERNAME != '' ]
+then
+  printf "DEFAULT_MGR_USERNAME=$DEFAULT_MGR_USERNAME\n" >> /etc/cron.d/crontab
+fi
+if [ $DEFAULT_CONF_LIMIT != '' ]
+then
+  printf "DEFAULT_CONF_LIMIT=$DEFAULT_CONF_LIMIT\n" >> /etc/cron.d/crontab
+fi
+if [ $DEFAULT_PART_LIMIT != '' ]
+then
+  printf "DEFAULT_PART_LIMIT=$DEFAULT_PART_LIMIT\n" >> /etc/cron.d/crontab
+fi
+
+
 
 echo -e '>> Writing ENV to cron.'
 
