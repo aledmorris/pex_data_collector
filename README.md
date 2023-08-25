@@ -27,7 +27,7 @@ The environment variables are described below:
 - ```DEFAULT_MGR_SECRET```: The password to authenticate to the Management Node.
 - ```DEFAULT_CONF_LIMIT```: (Optional) maximum number of conference records to retrieve, defaults to ```5000```. If you find that this value is too low then this can be increased.
 - ```DEFAULT_PART_LIMIT```: (Optional) maximum number of participant records to retrieve, defaults to ```10000```. If you find that this value is too low then this can be increased.
-- ```DATA_CRON_TIME```: Cron expression to control when the data is collected. It should be set to once a day. Use an online cron expression generator if unsure (e.g. https://www.atatus.com/tools/cron)
+- ```DATA_CRON_TIME```: Cron expression to control when the data is collected. It should be set to once a day. Use an online cron expression generator if unsure (e.g. https://www.atatus.com/tools/cron), note that the time expressed here is UTC.
 
 An example ```.env``` file can be found in the repository. The env file can be used or you can manually set the environment variables in the CLI prior to running the Docker run command.
 
