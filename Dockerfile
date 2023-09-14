@@ -1,9 +1,11 @@
-FROM python:3.9.17-bullseye
+FROM python:3.12.0rc1-slim-bullseye
 
 RUN apt-get update && apt-get -y install cron bash vim
 
 # create empty crontab file
 RUN touch /etc/cron.d/crontab
+
+WORKDIR /app
 
 # copy the python script to the image
 COPY data_collector.py /app/data_collector.py
@@ -13,8 +15,6 @@ COPY ./requirements.txt /app/requirements.txt
 
 # copy entrypoint shell script
 COPY start.sh /app/start.sh
-
-WORKDIR /app
 
 # create dat DIR
 RUN mkdir /app/data
@@ -27,4 +27,4 @@ RUN chmod 0644 /etc/cron.d/crontab
 RUN chmod +x /app/start.sh
 
 # run the shell script
-ENTRYPOINT /app/start.sh
+ENTRYPOINT ["/bin/bash","-c","source /app/start.sh"]

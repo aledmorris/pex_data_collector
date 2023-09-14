@@ -45,7 +45,7 @@ Please be aware of the following.
 
 - The container is **not** production ready, it is purely a proof of concept to demonstrate a number of different elements, namely: Pexip Infinity Management API, Ptyhon, Docker, Dockerfile, and using Cron within a Docker container to run a script on a shedule.
 - This container is not secure and you should use it at your own risk.
-    - API requests to the Management Node use HTTPS, but TLS is unverified.
+    - API requests to the Management Node use HTTPS, TLS is verified, therefore the management node must have a valid certificate i.e. not self-signed.
     - As the password is passed to the container, it can be viewed in plaintext when connecting to the container shell.
     - Storing your password in the ```.env``` file (i.e. in plain text) is probably not a good idea.
 

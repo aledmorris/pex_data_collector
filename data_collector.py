@@ -22,7 +22,7 @@ def get_api(url,username,password):
     try:
         logger.debug('Attempting API call')
 
-        response = requests.request("GET", url, auth=(username, password), verify=False)
+        response = requests.request("GET", url, auth=(username, password), verify=True)
 
         # grab the json objects
         data_json = response.json()['objects']
