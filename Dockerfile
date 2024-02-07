@@ -1,4 +1,4 @@
-FROM python:3.12.0rc1-slim-bullseye
+FROM python:3.13.0a2-slim-bullseye
 
 RUN apt-get update && apt-get -y install cron bash vim
 
