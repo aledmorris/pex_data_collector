@@ -1,4 +1,4 @@
-FROM python:3.15-rc-alpine
+FROM python:3.15-rc-alpine3.22
 
 RUN apt-get update && apt-get -y install cron bash vim
 
